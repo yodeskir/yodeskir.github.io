@@ -34,5 +34,9 @@ font-family: Flaticon;
 .flaticon-bullhorn-1:before { content: "\f108"; }
 .flaticon-start:before { content: "\f109"; }
 .flaticon-medal:before { content: "\f10a"; }
-.flaticon-quote:before { content: "\f10b"; }
-.flaticon-quote-1:before { content: "\f10c"; }
+.flaticon-right-quote:before { content: "\f10b"; }
+.flaticon-left-quote:before { content: "\f10c"; }
+.flaticon-technical-support:before { content: "\f10d"; }
+.flaticon-robot:before { content: "\f10e"; }
+.flaticon-code:before { content: "\f10f"; }
+
