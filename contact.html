@@ -84,52 +84,56 @@
 	</header>
 
 	<!-- Slider Area Start-->
-	<div class="services-area">
+	<div class="services-area" style="padding-top: 180px;">
 		<div class="container">
 			<!-- Section-tittle -->
 			<div class="row d-flex justify-content-center">
 				<div class="col-lg-8">
 					<div class="section-tittle text-center mb-80">
 						<span>Contact</span>
-						<h2>Contact Us​</h2>
+						<h2 id="title">Contact Us​</h2>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Slider Area End-->
-
+	<!-- https://docs.google.com/forms/d/e/1FAIpQLSdbpf3OgklZw1qQAT1F1C4W6GNlUd0IOSODLK44dtS6CIfqfg/viewform?usp=pp_url&entry.1608534669=theName&entry.253850793=theSubject&entry.1737665857=theEmail&entry.1813100485=theMessage -->
 	<!-- ================ contact section start ================= -->
 	<section class="contact-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
-					<form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-						novalidate="novalidate">
+					<form class="form-contact contact_form" name="gform" id="gform" enctype="text/plain"
+						action="https://docs.google.com/forms/d/e/1FAIpQLSdbpf3OgklZw1qQAT1F1C4W6GNlUd0IOSODLK44dtS6CIfqfg/formResponse?usp=sf_link"
+						target="hidden_iframe" onsubmit="submitted=true;">
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+									<textarea class="form-control w-100" name="entry.1813100485" id="entry.1813100485" cols="30" rows="9"
 										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
 										placeholder=" Enter Message"></textarea>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+									<input class="form-control valid" name="entry.1608534669" id="entry.1608534669" type="text"
+										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
+										placeholder="Enter your name">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+									<input class="form-control valid" name="entry.1737665857" id="entry.1737665857" type="email"
+										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
+										placeholder="Email">
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
-										onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+									<input class="form-control" name="entry.253850793" id="entry.253850793" type="text"
+										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
+										placeholder="Enter Subject">
 								</div>
 							</div>
 						</div>
@@ -137,6 +141,7 @@
 							<button type="submit" class="button button-contactForm boxed-btn">Send</button>
 						</div>
 					</form>
+					<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 				</div>
 				<div class="col-lg-3 offset-lg-1">
 					<div class="media contact-info">
@@ -173,13 +178,13 @@
 					<div class="col-xl-7 col-lg-9 col-md-12">
 						<div class="wantToWork-caption">
 							<h2>Have project in mind?</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut.</p>
+							<p>Write to us and tell us what are your needs. We will respond without delay with a proposal according
+								to your technological needs.</p>
 						</div>
 					</div>
 					<div class="col-xl-5 col-lg-3 col-md-12">
 						<div class="wantToWork-btn f-right">
-							<a href="#" class="btn btn-ans">Contact Us</a>
+							<a href="contact.html" class="btn btn-ans">Contact Us</a>
 						</div>
 					</div>
 				</div>
@@ -206,7 +211,7 @@
 									<div class="footer-tittle">
 										<div class="footer-pera">
 											<p class="info1">243 Rue de la Saudrays, Boucherville <br> QC, Canada - J4B1N5</p>
-											<p class="info2">yodeski@gmail.com</p>
+											<p class="info2">info@appgis.dev</p>
 										</div>
 									</div>
 									<div class="footer-social">
@@ -222,8 +227,8 @@
 								<div class="footer-tittle">
 									<h4>Quick Links</h4>
 									<ul>
-										<li><a href="#aboutus">About us</a></li>
-										<li><a href="#skillset">Features</a></li>
+										<li><a href="index.html#aboutus">About us</a></li>
+										<li><a href="index.html#skillset">Features</a></li>
 										<li><a href="contact.html">Contact</a></li>
 									</ul>
 								</div>
@@ -320,6 +325,14 @@
 	<!-- Jquery Plugins, main Jquery -->
 	<script src="./assets/js/plugins.js"></script>
 	<script src="./assets/js/main.js"></script>
+
+	<script type="text/javascript">var submitted = false;</script>
+	<script type="text/javascript">
+		$('#gform').on('submit', function (e) {
+			$('.contact-section *').fadeOut(2000);
+			$('#title').html('Your submission has been processed...');
+		});
+	</script>
 
 </body>
 
